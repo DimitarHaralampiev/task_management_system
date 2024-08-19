@@ -1,1 +1,5 @@
 fastapi~=0.112.1
+uvicorn
+SQLAlchemy
+alembic
+pydantic
