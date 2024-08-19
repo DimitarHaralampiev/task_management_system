@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - .:/app1
     environment:
       - DATABASE_URL=sqlite:///./task_management_system.db
     depends_on:

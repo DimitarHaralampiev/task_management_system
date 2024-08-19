@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 import os
 
 
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://postgres:postgres@localhost:5432/task_management_system')
+DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql+psycopg2://postgres:postgres@localhost/task_management_system')
 
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
