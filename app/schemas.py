@@ -4,6 +4,16 @@ from datetime import datetime
 from app.models import PriorityEnum, StatusEnum
 
 
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class LoginForm(BaseModel):
+    username: str
+    password: str
+
+
 class TaskBase(BaseModel):
     title: str
     description: Optional[str] = None
@@ -23,7 +33,7 @@ class Task(TaskBase):
     updated_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attribute = True
 
 
 class UserBase(BaseModel):
@@ -41,4 +51,4 @@ class User(UserBase):
     tasks: List[Task] = []
 
     class Config:
-        orm_mode = True
+        from_attribute = True
